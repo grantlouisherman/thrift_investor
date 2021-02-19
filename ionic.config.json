@@ -1,0 +1,7 @@
+{
+  "name": "thrift_investor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
