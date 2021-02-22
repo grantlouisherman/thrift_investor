@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {IonItem, IonLabel, IonList} from "@ionic/react";
+import { IonList} from "@ionic/react";
 import './CryptoContainer.css';
 
 interface ContainerProps { }

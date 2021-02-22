@@ -6,9 +6,11 @@ interface ContainerProps { }
 const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
       <div>
-        <CryptoContainer/>
+          <h2>Crypto</h2>
+          <CryptoContainer/>
         <div/>
-        <RedditContainer/>
+          <h2>Reddit</h2>
+          <RedditContainer/>
       </div>
   );
 };

@@ -10,6 +10,7 @@ const INVESTING_REDDIT_SUBTHREADS = [
     "Investing",
     "news",
     "wallstreetbets",
+    "SecurityAnalysis",
 ];
 const cleanUpReturnRedditObject = (item: any) => {
     const { data: { children }} = item;
