@@ -7,6 +7,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
       <div>
         <CryptoContainer/>
+        <div/>
         <RedditContainer/>
       </div>
   );

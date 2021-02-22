@@ -28,7 +28,7 @@ const RedditContainer: React.FC<ContainerProps> = () => {
 
     }, []);
     return (
-        <div className="container">
+        <div>
             <IonList>
                 { redditNewsItems.map(({ link, title, subreddit }) => (
                     <IonItem href={link}>
