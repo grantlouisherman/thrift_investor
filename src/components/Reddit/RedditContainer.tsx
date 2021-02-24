@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import {IonItem, IonLabel, IonList} from '@ionic/react';
+import {IonContent, IonItem, IonLabel, IonList, IonSpinner} from '@ionic/react';
+
+import { GetData } from '../hooks';
 
 import './RedditContainer.css';
 
@@ -17,17 +19,18 @@ const cleanUpReturnRedditObject = (item: any) => {
     const { data: { title, permalink, subreddit }} = children.shift();
     return { title, link: `https://www.reddit.com/${permalink}`, subreddit};
 }
-const RedditContainer: React.FC<ContainerProps> = () => {
-    const [ redditNewsItems, setRedditNewsItems ] = useState([]);
-    useEffect(() => {
-        Promise.all(INVESTING_REDDIT_SUBTHREADS.map(subreddit =>
-            fetch(`https://www.reddit.com/r/${subreddit}/top/.json?limit=1`)
-            .then((data) => data.json())))
-            .then((d:any) => {
-                setRedditNewsItems(d.map(cleanUpReturnRedditObject));
-            })
 
-    }, []);
+const endPointCreator = (subreddit: string) => `https://www.reddit.com/r/${subreddit}/top/.json?limit=1`;
+
+const RedditContainer: React.FC<ContainerProps> = () => {
+    const redditNewsItems = GetData(INVESTING_REDDIT_SUBTHREADS, endPointCreator, cleanUpReturnRedditObject);
+    if(!redditNewsItems){
+        return (
+            <IonContent>
+                <IonSpinner/>
+            </IonContent>
+        )
+    }
     return (
         <div>
             <IonList>
