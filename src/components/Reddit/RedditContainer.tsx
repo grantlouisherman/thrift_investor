@@ -35,7 +35,7 @@ const RedditContainer: React.FC<ContainerProps> = () => {
         <div>
             <IonList>
                 { redditNewsItems.map(({ link, title, subreddit }) => (
-                    <IonItem href={link}>
+                    <IonItem href={link} key={subreddit}>
                         <IonLabel>{subreddit}</IonLabel>
                         <IonLabel>{title}</IonLabel>
                     </IonItem>

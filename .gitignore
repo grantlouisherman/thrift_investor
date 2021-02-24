@@ -19,6 +19,8 @@
 .env.production.local
 .vscode
 .idea
+src/components/Twitter/secrets.json
+
 
 npm-debug.log*
 yarn-debug.log*

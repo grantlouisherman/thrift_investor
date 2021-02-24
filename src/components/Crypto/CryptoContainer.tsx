@@ -36,7 +36,7 @@ const CryptoContainer: React.FC<ContainerProps> = () => {
         <div>
             <IonList>
                 { coinPrices.map(({ name, volume, last }) => (
-                        <div className="cryptoContainer">
+                        <div className="cryptoContainer" key={name}>
                             <h4>{name}</h4>
                             <h4>{last}</h4>
                             <h4>{volume}</h4>
